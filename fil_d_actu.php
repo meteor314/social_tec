@@ -45,8 +45,7 @@ if(!empty($_GET['id'])) {
 
     } else {
         echo "compte inexistant";
-        header("Location:erreur404.html");
-        die();
+        header("Location:erreur404.txt");
     }
 } else {
     die();
@@ -63,7 +62,7 @@ if(isset($_POST['submit_btn'])) {
 
             $publication = securisation (($_POST['publication'])   );
             $publication = nl2br($publication);
-            $target_dir = "uploads_img/";
+            $target_dir = "uploads_img/"; 
             $randomNameFile = randomName();
 
 
@@ -187,7 +186,6 @@ if(isset($_POST['submit_btn'])) {
     
 
 
-
        
 
 
@@ -308,6 +306,9 @@ if(isset($_POST['submit_btn'])) {
                     
                     while($row =  $publication_affichage->fetch(PDO::FETCH_ASSOC)){
                         $postID =$row['id'];
+                        var_dump($row['id']);
+
+
                             
                     ?>
                 <div id="posts-container">
@@ -347,8 +348,9 @@ if(isset($_POST['submit_btn'])) {
                             </button>
                             <button class="mdc-button mdc-card__action mdc-card__action--button">
                                 <div class="mdc-button__ripple"></div>
-                                 <a  href="comment.php?id=<?=$row['id'];?>">Aimer</a> 
                             </button>
+
+                            <a  href="comment.php?id=<?=$postID;?>">Commenter</a> 
                             </div>
                             <div class="mdc-card__action-icons">
                             <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>

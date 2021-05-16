@@ -23,7 +23,8 @@ if(!empty($_GET['id'])) {     $id = $_GET['id'];
     if($_SESSION['id'] == $publish_info['admin_id']) {
         if(isset($_POST["submit_btn"]) ) {
             $supp = $conn->prepare("DELETE FROM publication WHERE id= ?");
-            $supp->execute(array($id)); echo "supprié";
+            $supp->execute(array($id)); echo "supprimer";
+            header("location:profile.php?id=" . $_SESSION['id']);
 
         } else {
             echo "non";

@@ -145,7 +145,7 @@ if(!empty($_GET['id'])) {
          // }
       ?>
 
-        <button class="profile-card__button button--orange">Envoyer un message</button>
+        <button class="profile-card__button button--orange"><a href="editer-le-profile.php?id=<?=$_SESSION['id']?>">Modifier mon profile</a></button>
       </div>
     </div>
 

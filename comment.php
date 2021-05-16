@@ -17,7 +17,7 @@ if(!empty($_GET['id']) && !empty($_SESSION['id'])){
     $req->execute(array($id));
     if($req->rowCount() == 0) {
         echo "cas A";
-        header("Location:erreur404.txt"); //if the post doesn't exist
+       header("Location:erreur404.txt"); //if the post doesn't exist
     }
 
     if(isset($_POST["submit_btn"])){
